@@ -1,9 +1,9 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: min-content auto auto; //auto-fill, minmax(50px,1fr) auto-fill, minmax(600px,1fr) auto-fit, minmax(190px,1fr);
+  grid-template-columns: auto;
+  grid-template-rows: min-content auto auto;
   gap: 1px 1px;
-  grid-template-areas: "header header header" "left-ad game-area right-ad" "footer footer footer";
+  grid-template-areas: "header" "game-area" "footer";
 }
 
 .header { grid-area: header; }

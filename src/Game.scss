@@ -1,11 +1,15 @@
 .Game{
-    width:600px;
-    height:600px;
+    max-width:600px;
+    max-height:600px;
     position: relative;
+    margin:auto;
     
     .Game-board{
-        width:600px;
-        height:600px;
+        width:100vw;
+        height:100vw;
+        max-width:600px;
+        max-height:600px;
+        margin:auto;
         display:flex;
         flex-wrap: wrap;
         background-color:#282c34;

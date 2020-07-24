@@ -1,0 +1,107 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: min-content auto auto; //auto-fill, minmax(50px,1fr) auto-fill, minmax(600px,1fr) auto-fit, minmax(190px,1fr);
+  gap: 1px 1px;
+  grid-template-areas: "header header header" "left-ad game-area right-ad" "footer footer footer";
+}
+
+.header { grid-area: header; }
+
+.game-area { grid-area: game-area; }
+
+.left-ad { grid-area: left-ad; }
+
+.right-ad { grid-area: right-ad; }
+
+.footer { 
+  grid-area: footer; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  overflow:hidden;
+  
+  a{
+    color: #bbb;
+    transition:0.3s all ease;
+  }
+  a:hover{
+    text-decoration: none;
+    color:white;
+    .brand::after{
+      opacity:1;
+    }
+  }
+  
+  &>div{
+    height:50px;
+  }
+
+  .brand{
+    position:relative;
+    width:20px;
+    height:50px;
+    display:inline-block;
+  }
+  .brand::after{
+    content:'';
+    position:absolute;
+    bottom:-20px;
+    left:5px;
+    opacity:0.3;
+    width: 20px;
+    height:100%;
+    background-image: url('https://paladinwebgroup.com/img/shield.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+    transition:0.3s all ease;
+
+  }
+  
+
+    
+}
+
+
+.App {
+  text-align: center;
+  background-color: #3e4149;
+  min-height: 100vh;
+  // display:flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
+}
+
+.App-header {
+  font-size: calc(12px + 3vmin);
+  color: white;
+
+  h1{
+    font-family: 'Galada', cursive;
+    font-weight: normal;
+    margin:20px 0 10px 0;
+    
+    span:first-child{
+      color:magenta;
+      text-shadow: 0 0 20px magenta;
+      animation: glow 3s infinite ease-in-out;
+    }
+    span:last-child{
+      text-shadow: 0 0 20px cyan;
+      color:cyan;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+  }
+
+}
+
+
+@keyframes glow {
+  0% { opacity: 0.5;  }
+  50% { opacity: 1; }
+  100%{ opacity: 0.5; }
+}

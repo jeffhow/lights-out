@@ -8,7 +8,7 @@ class Cell extends React.Component{
     }
 
     handleClick(e){
-        this.props.changeCell(...this.props.itemId);
+        this.props.changeCell(this.props.itemId);
     }
 
     render(){

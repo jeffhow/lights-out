@@ -18,15 +18,15 @@
         box-shadow: 0 0 20px  magenta;
     }
     
-    .Game-cheat{
+    .Game-restart{
         width: 100px;
         height:30px;
-        position:absolute;
-        bottom:-30px;
-        left:100px;
-        border-radius: 0 0 10px 10px;
+        margin:20px auto;
+        display: block;
+        border-radius: 10px;
         border:none;
-        opacity:0;
+        opacity:.5;
+        background-color:cyan;
         transition: 1s all ease;
 
         &:hover{

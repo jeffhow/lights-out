@@ -1,24 +1,6 @@
 .Game{
-    max-width:600px;
-    max-height:600px;
-    position: relative;
-    margin:auto;
-    
-    .Game-board{
-        width:100vw;
-        height:100vw;
-        max-width:600px;
-        max-height:600px;
-        margin:auto;
-        display:flex;
-        flex-wrap: wrap;
-        background-color:#282c34;
-        border-radius:10px;
-        overflow: hidden;
-        box-shadow: 0 0 20px  magenta;
-    }
-    
-    .Game-restart{
+   
+    .Game-btn{
         width: 100px;
         height:30px;
         margin:20px auto;
@@ -35,20 +17,22 @@
     }
 
     .win{
-        margin:0;
-        width:100%;
-        height:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 125px;
+        // margin:0;
+        // width:100%;
+        // height:100%;
+        // display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // align-items: center;
+        font-size: 25vw;
         font-family: 'Galada', cursive;
-        span:first-child{
+        div:first-child{
             color:magenta;
             text-shadow: 0 0 20px magenta;
             animation: glow 3s infinite ease-in-out;
+            margin-bottom:0;
           }
-          span:last-child{
+        div:last-child{
             text-shadow: 0 0 20px cyan;
             color:cyan;
             animation: glow 2s infinite ease-in-out;

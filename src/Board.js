@@ -2,17 +2,10 @@ import React from 'react';
 import Cell from './Cell';
 import './Board.scss'
 import {getPuzzleConfig} from './puzzles';
-/**
- * @todo: refactor a separation between game and board. 
- * the Game should track level ✔️
- * 
- * pass puzzle Level and board size as props ✔️
- * Fix  game over function (called by board when true)
- * 
- * board should render the cells ✔️
- * may need to refactor scss for cells / flexbox
- * 
- */
+import { faUndoAlt, faArrowRight, faCog } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 class Board extends React.Component{
     static defaultProps = {
         puzzleLevel: 0,
@@ -106,15 +99,27 @@ class Board extends React.Component{
             <div className="Board">
                 { this.state.gameOver 
                 ? <div>
-                    <h1 className="win"><span>You</span>&nbsp;<span>Win!</span></h1>
-                    <button className="Game-restart" onClick={this.props.nextLevel}>Play Next Level</button> 
-                    <button className="Game-restart" onClick={this.restart}>Play Same Level again</button> 
+                    <div className="Board-puzzle win">
+                        <div>You</div>
+                        <div>Win!</div>
+                    </div>
+                    <h2><span>Level</span> <span>{this.props.puzzleLevel}</span></h2>
+                    <button onClick={this.restart} className="Game-btn"><FontAwesomeIcon icon={faUndoAlt} /> Restart</button>  
+                    <button className="Game-btn" onClick={this.props.nextLevel}><FontAwesomeIcon icon={faArrowRight} /> Next Level</button> 
                   </div>
 
                 : <div>
-                    <div className="Game-board">{this.state.board}</div>
-                    <p>Level {this.props.puzzleLevel}</p>
-                    <button onClick={this.restart} className="Game-restart">Restart Level</button>  
+                    <div className="Board-puzzle">{this.state.board}</div>
+                    <h2><span>Level</span> <span>{this.props.puzzleLevel}</span></h2>
+                    <button onClick={this.restart} className="Game-btn"><FontAwesomeIcon icon={faUndoAlt} /> Restart</button>  
+                    
+                    {/**
+                     * Will add level select as nav
+                     * 
+                     
+                     <button onClick={this.restart} className="Game-btn"><FontAwesomeIcon icon={faCog} /> Levels</button>  
+
+                     */}
                 </div>          
                 }            
             </div>

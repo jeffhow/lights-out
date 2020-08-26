@@ -1,26 +1,45 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: min-content auto auto;
-  gap: 1px 1px;
-  grid-template-areas: "header" "game-area" "footer";
+*{
+  box-sizing: border-box;
 }
 
-.header { grid-area: header; }
+.App {
+  text-align: center;
+  background-color: #3e4149;
+  min-height: 100vh;
 
-.game-area { grid-area: game-area; }
+}
 
-.left-ad { grid-area: left-ad; }
+.App-header {
+  font-size: calc(12px + 3vmin);
+  color: white;
+}
 
-.right-ad { grid-area: right-ad; }
+h1, h2{
+  font-family: 'Galada', cursive;
+  font-weight: normal;
+  padding:20px 0 10px 0;
+  margin:0;
+}
 
-.footer { 
-  grid-area: footer; 
+h1 span:first-child,
+h2 span:last-child{
+  color:magenta;
+  text-shadow: 0 0 20px magenta;
+  animation: glow 3s infinite ease-in-out;
+}
+
+h1 span:last-child,
+h2 span:first-child{
+  text-shadow: 0 0 20px cyan;
+  color:cyan;
+  animation: glow 2s infinite ease-in-out;
+}
+
+.App-footer { 
   display: flex;
   align-items: center;
   justify-content: center;
   color: #bbb;
-  overflow:hidden;
   
   a{
     color: #bbb;
@@ -35,7 +54,7 @@
   }
   
   &>div{
-    height:50px;
+    height:100px;
   }
 
   .brand{
@@ -44,6 +63,7 @@
     height:50px;
     display:inline-block;
   }
+
   .brand::after{
     content:'';
     position:absolute;
@@ -59,48 +79,8 @@
     transition:0.3s all ease;
 
   }
-  
-
     
 }
-
-
-.App {
-  text-align: center;
-  background-color: #3e4149;
-  min-height: 100vh;
-  // display:flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: space-between;
-}
-
-.App-header {
-  font-size: calc(12px + 3vmin);
-  color: white;
-}
-
-h1, h2{
-  font-family: 'Galada', cursive;
-  font-weight: normal;
-  margin:20px 0 10px 0;
-}
-
-h1 span:first-child,
-h2 span:last-child{
-  color:magenta;
-  text-shadow: 0 0 20px magenta;
-  animation: glow 3s infinite ease-in-out;
-}
-h1 span:last-child,
-h2 span:first-child{
-  text-shadow: 0 0 20px cyan;
-  color:cyan;
-  animation: glow 2s infinite ease-in-out;
-}
-
-
-
 
 
 

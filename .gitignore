@@ -21,6 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-Game-old.js
 GameRandom.js
 logo.ai
+findSolution-with-checks.js
+old-Game.js
+old-Board.js
+old-Cell.js

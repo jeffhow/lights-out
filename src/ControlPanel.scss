@@ -1,0 +1,12 @@
+.ControlPanel{
+    max-width:600px;
+    margin:0 auto;
+    
+    .ControlPanel-controls{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+}

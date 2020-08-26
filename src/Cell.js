@@ -8,13 +8,14 @@ class Cell extends React.Component{
     }
 
     handleClick(e){
-        this.props.changeCell(this.props.itemId);
+        this.props.changeCell( ...this.props.itemId.split(',').map(Number) );
     }
 
     render(){
-        let val = this.props.on ? 'Cell on' : 'Cell';
+        let val = this.props.on > 0 ? 'Cell on' : 'Cell';
+        let hint = this.props.hint > 0 ? 'hint' : '';
         return(
-            <div className={val} onClick={this.handleClick} ></div>
+            <div className={`${val} ${hint}`} onClick={this.handleClick} ></div>
         );
     }
 }

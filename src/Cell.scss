@@ -4,6 +4,8 @@
     transition: 0.3s all ease;
     position: relative;
     
+    
+    
     &:hover{
         box-shadow: 0 0 1px 1px rgba(25, 25, 25, 0.7) inset, 0 0 1px 1px rgba(255, 255, 255, 0.7);
         border-radius: 4px;  
@@ -11,8 +13,14 @@
         &.on::before{
             box-shadow: 0 0 1px 1px rgba(25, 25, 25, 0.7) inset, 0 0 1px 1px rgba(255, 255, 255, 0.7);
             opacity:1;
-            z-index: 100;
             border-radius: 4px;  
+        }
+
+        &.hint::before{
+            border-radius:10px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 2px 2px black;
         }
     }
     
@@ -32,4 +40,31 @@
         box-shadow: 0 0 10px 1px cyan;
         opacity:1; 
     }
+
+    &.hint::before{
+        content:'';
+        background-image:url('io.svg');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        width: 75%;
+        height: 75%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        border-radius: 10px;
+        
+        opacity: 0.7;
+        transition: all 1s ease;
+        animation: glowHint 2s infinite ease-in-out;
+    }
+
 }
+
+@keyframes glowHint {
+    0% { opacity: 0.4;  }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.4; }
+  }

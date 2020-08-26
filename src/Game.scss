@@ -17,14 +17,11 @@
     }
 
     .win{
-        // margin:0;
-        // width:100%;
-        // height:100%;
-        // display: flex;
         flex-direction: column;
         justify-content: space-around;
+        flex-wrap: initial;
         // align-items: center;
-        font-size: 25vw;
+        font-size: clamp(12px, 25vw, 200px);
         font-family: 'Galada', cursive;
         div:first-child{
             color:magenta;
@@ -39,5 +36,5 @@
           }
     }
 
-
 }
+

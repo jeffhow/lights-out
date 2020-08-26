@@ -1,0 +1,35 @@
+.Nav{
+    &.close{
+        display:none;
+    }
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:100vw;
+    height:100vh;
+    padding:50px 0;
+    background-color: #333333;
+    transform: translate(-50%,-50%);
+    z-index:2;
+    overflow: hidden;
+
+    &-close{
+        position: absolute;
+        top:20px;
+        right:40px;
+        color:#fff;
+
+        &:hover{
+            color:#bbb;
+        }
+    }
+    
+    div{
+        padding:0;
+        height:100%;
+        max-width:400px;
+        overflow-y: scroll;
+        margin: 0 auto;
+      
+    }
+}
